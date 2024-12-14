@@ -1,0 +1,436 @@
+title: Simple keyword detection rule for arp
+id: 90639a33-c026-4aee-8312-49f5d63c44df
+status: experimental
+description: Detects interesting keywords based on arp tool
+references:
+- https://www.virustotal.com/gui/file/b24ab1f8cb68547932dd8a5c81e9b2133763a7ddf48aa431456530c1340b939e/details
+author: '@mthcht'
+date: 2023/07/30
+modified: 2024/11/02
+tags:
+- attack.T1003.001
+- attack.T1018
+- attack.TA0006
+- attack.TA0007
+logsource:
+  category:
+  - endpoint
+detection:
+  selection:
+  - ParentCommandLine:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - CommandLine:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - Details:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - registry.value:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - process.args:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - process.command_line:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - process.env_vars:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - process.io.text:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - process.title:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - pe.company:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - pe.description:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - pe.product:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - os.full:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - host.hostname:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - event.original:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - email.subject:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - device.model.name:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - container.image.name:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - container.name:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - Image:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - OriginalFileName:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - CurrentDirectory:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - ParentImage:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - ParentCommandLine:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - TargetFilename:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - Signature:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - signature:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - ImageLoaded:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - Company:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - Description:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - description:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - CommandLine:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - SourceImage:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - TargetImage:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - CallTrace:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - TargetObject:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - Details:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - PipeName:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - Consumer:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - Destination:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - Name:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - Query:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - NewName:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - StartAddress:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - StartModule:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - StartFunction:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - SourceHostname:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - Device:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - file_name:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - file_path:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - process:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - original_file_name:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - parent_process:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - process_path:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - service_path:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - registry_path:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - registry_value_data:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - registry_value_name:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - ContextInfo:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - Payload:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - ScriptBlockText:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - ServerName:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - TransportName:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - NewProcessName:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - ParentProcessName:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - Application:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - Product Name:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - Threat Name:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - Process Name:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - Path:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - ImagePath:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - ServiceName:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - ProcessPath:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - AppName:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - AppPath:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - ModulePath:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - registry.data.strings:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - registry.path:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - registry.value:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - process.args:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - process.command_line:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - process.env_vars:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - process.io.text:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - process.executable:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - process.name:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - process.title:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - pe.company:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - pe.description:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - pe.original_file_name:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - pe.product:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - os.full:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - host.hostname:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - file.fork_name:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - file.name:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - file.path:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - file.target_path:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - email.attachments.file.name:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - email.subject:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - dll.path:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - device.model.name:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - container.image.name:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - container.name:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  - object:
+    - '*cmd.exe /c arp -a > C:\windows\*.out 2>&1*'
+    - '*"C:\Windows\system32\ARP.EXE" /a*'
+  condition: selection
+fields:
+- ParentCommandLine
+- CommandLine
+- Details
+- registry.value
+- process.args
+- process.command_line
+- process.env_vars
+- process.io.text
+- process.title
+- pe.company
+- pe.description
+- pe.product
+- os.full
+- host.hostname
+- event.original
+- email.subject
+- device.model.name
+- container.image.name
+- container.name
+- Image
+- OriginalFileName
+- CurrentDirectory
+- ParentImage
+- ParentCommandLine
+- TargetFilename
+- Signature
+- signature
+- ImageLoaded
+- Company
+- Description
+- description
+- CommandLine
+- SourceImage
+- TargetImage
+- CallTrace
+- TargetObject
+- Details
+- PipeName
+- Consumer
+- Destination
+- Name
+- Query
+- NewName
+- StartAddress
+- StartModule
+- StartFunction
+- SourceHostname
+- Device
+- file_name
+- file_path
+- process
+- original_file_name
+- parent_process
+- process_path
+- service_path
+- registry_path
+- registry_value_data
+- registry_value_name
+- ContextInfo
+- Payload
+- ScriptBlockText
+- ServerName
+- TransportName
+- NewProcessName
+- ParentProcessName
+- Application
+- Product Name
+- Threat Name
+- Process Name
+- Path
+- ImagePath
+- ServiceName
+- ProcessPath
+- AppName
+- AppPath
+- ModulePath
+- registry.data.strings
+- registry.path
+- registry.value
+- process.args
+- process.command_line
+- process.env_vars
+- process.io.text
+- process.executable
+- process.name
+- process.title
+- pe.company
+- pe.description
+- pe.original_file_name
+- pe.product
+- os.full
+- host.hostname
+- file.fork_name
+- file.name
+- file.path
+- file.target_path
+- email.attachments.file.name
+- email.subject
+- dll.path
+- device.model.name
+- container.image.name
+- container.name
+- object
+falsepositives:
+- unknown
+level: medium

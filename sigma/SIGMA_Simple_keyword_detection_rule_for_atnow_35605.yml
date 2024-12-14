@@ -1,0 +1,1278 @@
+title: Simple keyword detection rule for atnow
+id: ca6fdd1d-dd27-4021-9e3e-ea701b21ced4
+status: experimental
+description: Detects interesting keywords based on atnow tool
+references:
+- https://www.nirsoft.net/utils/atnow.html
+author: '@mthcht'
+date: 2023/07/30
+modified: 2024/11/02
+tags:
+- attack.T1053
+- attack.T1059
+- 'attack.TA0002 '
+logsource:
+  category:
+  - endpoint
+  - network
+detection:
+  selection:
+  - Image:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - OriginalFileName:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - CurrentDirectory:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - ParentImage:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - ParentCommandLine:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - TargetFilename:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - Signature:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - signature:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - ImageLoaded:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - Company:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - Description:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - description:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - CommandLine:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - SourceImage:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - TargetImage:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - CallTrace:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - TargetObject:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - Details:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - PipeName:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - Consumer:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - Destination:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - Name:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - Query:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - NewName:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - StartAddress:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - StartModule:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - StartFunction:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - SourceHostname:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - Device:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - file_name:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - file_path:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - process:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - original_file_name:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - parent_process:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - process_path:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - service_path:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - registry_path:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - registry_value_data:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - registry_value_name:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - ContextInfo:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - Payload:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - ScriptBlockText:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - ServerName:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - TransportName:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - NewProcessName:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - ParentProcessName:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - Application:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - Product Name:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - Threat Name:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - Process Name:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - Path:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - ImagePath:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - ServiceName:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - ProcessPath:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - AppName:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - AppPath:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - ModulePath:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - registry.data.strings:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - registry.path:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - registry.value:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - process.args:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - process.command_line:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - process.env_vars:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - process.io.text:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - process.executable:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - process.name:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - process.title:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - pe.company:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - pe.description:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - pe.original_file_name:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - pe.product:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - os.full:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - host.hostname:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - file.fork_name:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - file.name:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - file.path:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - file.target_path:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - email.attachments.file.name:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - email.subject:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - dll.path:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - device.model.name:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - container.image.name:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - container.name:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - object:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - ParentCommandLine:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - CommandLine:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - Details:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - registry.value:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - process.args:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - process.command_line:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - process.env_vars:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - process.io.text:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - process.title:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - pe.company:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - pe.description:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - pe.product:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - os.full:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - host.hostname:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - event.original:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - email.subject:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - device.model.name:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - container.image.name:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - container.name:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - Hashes:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - file_hash:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - hash.md5:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - hash.sha1:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - hash.sha256:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - hash.sha384:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - hash.sha512:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - hash.ssdeep:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - service_hash:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - description:
+    - '*\AtNow \\*'
+    - '*ProductName*>AtNow<*'
+    - '*>Near-Future Command Scheduler<*'
+    - '*\atnow.exe*'
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+    - '*\atnow.zip*'
+    - '*aa142160446a919eaba99ce15992f6e11b1fdaa7a9f569979a29068120f774cf*'
+  - url:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - dest_url:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - uri:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - uri_query:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - query:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - url_domain:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - uri_path:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - domain:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - QueryName:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - QueryResults:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - DestinationHostname:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - DestinationIp:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - http_referrer:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - http_referrer_domain:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - http_user_agent:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - dest_nt_host:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - sender:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - recipient:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - orig_recipient:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - subject:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - url.domain:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - url.full:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - url.original:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - url.query:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - user_agent.original:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - network.application:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - http.request.body.content:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - http.request.referrer:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - email.from.address:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - dns.question.name:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  - destination.domain:
+    - '*/atnow.zip*'
+    - '*/atnow.exe*'
+  condition: selection
+fields:
+- Image
+- OriginalFileName
+- CurrentDirectory
+- ParentImage
+- ParentCommandLine
+- TargetFilename
+- Signature
+- signature
+- ImageLoaded
+- Company
+- Description
+- description
+- CommandLine
+- SourceImage
+- TargetImage
+- CallTrace
+- TargetObject
+- Details
+- PipeName
+- Consumer
+- Destination
+- Name
+- Query
+- NewName
+- StartAddress
+- StartModule
+- StartFunction
+- SourceHostname
+- Device
+- file_name
+- file_path
+- process
+- original_file_name
+- parent_process
+- process_path
+- service_path
+- registry_path
+- registry_value_data
+- registry_value_name
+- ContextInfo
+- Payload
+- ScriptBlockText
+- ServerName
+- TransportName
+- NewProcessName
+- ParentProcessName
+- Application
+- Product Name
+- Threat Name
+- Process Name
+- Path
+- ImagePath
+- ServiceName
+- ProcessPath
+- AppName
+- AppPath
+- ModulePath
+- registry.data.strings
+- registry.path
+- registry.value
+- process.args
+- process.command_line
+- process.env_vars
+- process.io.text
+- process.executable
+- process.name
+- process.title
+- pe.company
+- pe.description
+- pe.original_file_name
+- pe.product
+- os.full
+- host.hostname
+- file.fork_name
+- file.name
+- file.path
+- file.target_path
+- email.attachments.file.name
+- email.subject
+- dll.path
+- device.model.name
+- container.image.name
+- container.name
+- object
+- ParentCommandLine
+- CommandLine
+- Details
+- registry.value
+- process.args
+- process.command_line
+- process.env_vars
+- process.io.text
+- process.title
+- pe.company
+- pe.description
+- pe.product
+- os.full
+- host.hostname
+- event.original
+- email.subject
+- device.model.name
+- container.image.name
+- container.name
+- Hashes
+- file_hash
+- hash.md5
+- hash.sha1
+- hash.sha256
+- hash.sha384
+- hash.sha512
+- hash.ssdeep
+- service_hash
+- description
+- url
+- dest_url
+- uri
+- uri_query
+- query
+- url_domain
+- uri_path
+- domain
+- QueryName
+- QueryResults
+- DestinationHostname
+- DestinationIp
+- http_referrer
+- http_referrer_domain
+- http_user_agent
+- dest_nt_host
+- sender
+- recipient
+- orig_recipient
+- subject
+- url.domain
+- url.full
+- url.original
+- url.query
+- user_agent.original
+- network.application
+- http.request.body.content
+- http.request.referrer
+- email.from.address
+- dns.question.name
+- destination.domain
+falsepositives:
+- unknown
+level: medium

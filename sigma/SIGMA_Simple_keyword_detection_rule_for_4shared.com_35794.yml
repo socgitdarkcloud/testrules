@@ -1,0 +1,487 @@
+title: Simple keyword detection rule for 4shared.com
+id: 57b81571-0826-45f0-9872-321b26c5488e
+status: experimental
+description: Detects interesting keywords based on 4shared.com tool
+references:
+- 4shared.com
+author: '@mthcht'
+date: 2023/07/30
+modified: 2024/11/02
+tags:
+- attack.T1071
+- attack.T1105
+- attack.T1125
+- attack.T1567
+- attack.TA0009
+- 'attack.TA0010 '
+logsource:
+  category:
+  - endpoint
+  - network
+detection:
+  selection:
+  - Image:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - OriginalFileName:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - CurrentDirectory:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - ParentImage:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - ParentCommandLine:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - TargetFilename:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - Signature:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - signature:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - ImageLoaded:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - Company:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - Description:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - description:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - CommandLine:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - SourceImage:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - TargetImage:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - CallTrace:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - TargetObject:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - Details:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - PipeName:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - Consumer:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - Destination:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - Name:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - Query:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - NewName:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - StartAddress:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - StartModule:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - StartFunction:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - SourceHostname:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - Device:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - file_name:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - file_path:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - process:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - original_file_name:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - parent_process:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - process_path:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - service_path:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - registry_path:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - registry_value_data:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - registry_value_name:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - ContextInfo:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - Payload:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - ScriptBlockText:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - ServerName:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - TransportName:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - NewProcessName:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - ParentProcessName:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - Application:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - Product Name:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - Threat Name:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - Process Name:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - Path:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - ImagePath:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - ServiceName:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - ProcessPath:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - AppName:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - AppPath:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - ModulePath:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - registry.data.strings:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - registry.path:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - registry.value:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - process.args:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - process.command_line:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - process.env_vars:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - process.io.text:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - process.executable:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - process.name:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - process.title:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - pe.company:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - pe.description:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - pe.original_file_name:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - pe.product:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - os.full:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - host.hostname:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - file.fork_name:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - file.name:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - file.path:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - file.target_path:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - email.attachments.file.name:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - email.subject:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - dll.path:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - device.model.name:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - container.image.name:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - container.name:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - object:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - url:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - dest_url:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - uri:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - uri_query:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - query:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - url_domain:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - uri_path:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - domain:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - QueryName:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - QueryResults:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - DestinationHostname:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - DestinationIp:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - http_referrer:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - http_referrer_domain:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - http_user_agent:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - dest_nt_host:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - sender:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - recipient:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - orig_recipient:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - subject:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - url.domain:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - url.full:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - url.original:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - url.query:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - user_agent.original:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - network.application:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - http.request.body.content:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - http.request.referrer:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - email.from.address:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - dns.question.name:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  - destination.domain:
+    - '*4shared.com/*upload*'
+    - '*https://www.4shared.com/get/*'
+  condition: selection
+fields:
+- Image
+- OriginalFileName
+- CurrentDirectory
+- ParentImage
+- ParentCommandLine
+- TargetFilename
+- Signature
+- signature
+- ImageLoaded
+- Company
+- Description
+- description
+- CommandLine
+- SourceImage
+- TargetImage
+- CallTrace
+- TargetObject
+- Details
+- PipeName
+- Consumer
+- Destination
+- Name
+- Query
+- NewName
+- StartAddress
+- StartModule
+- StartFunction
+- SourceHostname
+- Device
+- file_name
+- file_path
+- process
+- original_file_name
+- parent_process
+- process_path
+- service_path
+- registry_path
+- registry_value_data
+- registry_value_name
+- ContextInfo
+- Payload
+- ScriptBlockText
+- ServerName
+- TransportName
+- NewProcessName
+- ParentProcessName
+- Application
+- Product Name
+- Threat Name
+- Process Name
+- Path
+- ImagePath
+- ServiceName
+- ProcessPath
+- AppName
+- AppPath
+- ModulePath
+- registry.data.strings
+- registry.path
+- registry.value
+- process.args
+- process.command_line
+- process.env_vars
+- process.io.text
+- process.executable
+- process.name
+- process.title
+- pe.company
+- pe.description
+- pe.original_file_name
+- pe.product
+- os.full
+- host.hostname
+- file.fork_name
+- file.name
+- file.path
+- file.target_path
+- email.attachments.file.name
+- email.subject
+- dll.path
+- device.model.name
+- container.image.name
+- container.name
+- object
+- url
+- dest_url
+- uri
+- uri_query
+- query
+- url_domain
+- uri_path
+- domain
+- QueryName
+- QueryResults
+- DestinationHostname
+- DestinationIp
+- http_referrer
+- http_referrer_domain
+- http_user_agent
+- dest_nt_host
+- sender
+- recipient
+- orig_recipient
+- subject
+- url.domain
+- url.full
+- url.original
+- url.query
+- user_agent.original
+- network.application
+- http.request.body.content
+- http.request.referrer
+- email.from.address
+- dns.question.name
+- destination.domain
+falsepositives:
+- unknown
+level: medium

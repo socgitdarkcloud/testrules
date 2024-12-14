@@ -1,0 +1,1344 @@
+title: Simple keyword detection rule for adexplorer
+id: 4c560d4e-76d5-4133-8a6c-dc58cf98e688
+status: experimental
+description: Detects interesting keywords based on adexplorer tool
+references:
+- https://learn.microsoft.com/en-us/sysinternals/downloads/adexplorer
+author: '@mthcht'
+date: 2023/07/30
+modified: 2024/11/02
+tags:
+- attack.T1003.001
+- attack.T1087.001
+- attack.TA0006
+- attack.TA0007
+logsource:
+  category:
+  - endpoint
+  - network
+detection:
+  selection:
+  - ParentCommandLine:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - CommandLine:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - Details:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - registry.value:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - process.args:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - process.command_line:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - process.env_vars:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - process.io.text:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - process.title:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - pe.company:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - pe.description:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - pe.product:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - os.full:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - host.hostname:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - event.original:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - email.subject:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - device.model.name:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - container.image.name:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - container.name:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - Image:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - OriginalFileName:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - CurrentDirectory:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - ParentImage:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - ParentCommandLine:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - TargetFilename:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - Signature:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - signature:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - ImageLoaded:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - Company:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - Description:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - description:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - CommandLine:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - SourceImage:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - TargetImage:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - CallTrace:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - TargetObject:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - Details:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - PipeName:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - Consumer:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - Destination:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - Name:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - Query:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - NewName:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - StartAddress:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - StartModule:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - StartFunction:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - SourceHostname:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - Device:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - file_name:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - file_path:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - process:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - original_file_name:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - parent_process:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - process_path:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - service_path:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - registry_path:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - registry_value_data:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - registry_value_name:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - ContextInfo:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - Payload:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - ScriptBlockText:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - ServerName:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - TransportName:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - NewProcessName:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - ParentProcessName:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - Application:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - Product Name:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - Threat Name:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - Process Name:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - Path:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - ImagePath:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - ServiceName:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - ProcessPath:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - AppName:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - AppPath:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - ModulePath:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - registry.data.strings:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - registry.path:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - registry.value:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - process.args:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - process.command_line:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - process.env_vars:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - process.io.text:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - process.executable:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - process.name:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - process.title:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - pe.company:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - pe.description:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - pe.original_file_name:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - pe.product:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - os.full:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - host.hostname:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - file.fork_name:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - file.name:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - file.path:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - file.target_path:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - email.attachments.file.name:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - email.subject:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - dll.path:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - device.model.name:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - container.image.name:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - container.name:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - object:
+    - '*\Software\Sysinternals\Active Directory Explorer*'
+    - '*\Software\MSDART\Active Directory Explorer*'
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*>Active Directory Editor<*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+    - '*<Data Name=''OriginalFileName''>AdExp<*'
+    - '*>Sysinternals ADExplorer<*'
+  - url:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - dest_url:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - uri:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - uri_query:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - query:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - url_domain:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - uri_path:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - domain:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - QueryName:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - QueryResults:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - DestinationHostname:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - DestinationIp:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - http_referrer:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - http_referrer_domain:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - http_user_agent:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - dest_nt_host:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - sender:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - recipient:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - orig_recipient:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - subject:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - url.domain:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - url.full:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - url.original:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - url.query:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - user_agent.original:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - network.application:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - http.request.body.content:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - http.request.referrer:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - email.from.address:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - dns.question.name:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  - destination.domain:
+    - '*adexplorer.zip*'
+    - '*adexplorer.exe*'
+    - '*adexplorer64a.exe*'
+    - '*adexplorer64.exe*'
+  condition: selection
+fields:
+- ParentCommandLine
+- CommandLine
+- Details
+- registry.value
+- process.args
+- process.command_line
+- process.env_vars
+- process.io.text
+- process.title
+- pe.company
+- pe.description
+- pe.product
+- os.full
+- host.hostname
+- event.original
+- email.subject
+- device.model.name
+- container.image.name
+- container.name
+- Image
+- OriginalFileName
+- CurrentDirectory
+- ParentImage
+- ParentCommandLine
+- TargetFilename
+- Signature
+- signature
+- ImageLoaded
+- Company
+- Description
+- description
+- CommandLine
+- SourceImage
+- TargetImage
+- CallTrace
+- TargetObject
+- Details
+- PipeName
+- Consumer
+- Destination
+- Name
+- Query
+- NewName
+- StartAddress
+- StartModule
+- StartFunction
+- SourceHostname
+- Device
+- file_name
+- file_path
+- process
+- original_file_name
+- parent_process
+- process_path
+- service_path
+- registry_path
+- registry_value_data
+- registry_value_name
+- ContextInfo
+- Payload
+- ScriptBlockText
+- ServerName
+- TransportName
+- NewProcessName
+- ParentProcessName
+- Application
+- Product Name
+- Threat Name
+- Process Name
+- Path
+- ImagePath
+- ServiceName
+- ProcessPath
+- AppName
+- AppPath
+- ModulePath
+- registry.data.strings
+- registry.path
+- registry.value
+- process.args
+- process.command_line
+- process.env_vars
+- process.io.text
+- process.executable
+- process.name
+- process.title
+- pe.company
+- pe.description
+- pe.original_file_name
+- pe.product
+- os.full
+- host.hostname
+- file.fork_name
+- file.name
+- file.path
+- file.target_path
+- email.attachments.file.name
+- email.subject
+- dll.path
+- device.model.name
+- container.image.name
+- container.name
+- object
+- url
+- dest_url
+- uri
+- uri_query
+- query
+- url_domain
+- uri_path
+- domain
+- QueryName
+- QueryResults
+- DestinationHostname
+- DestinationIp
+- http_referrer
+- http_referrer_domain
+- http_user_agent
+- dest_nt_host
+- sender
+- recipient
+- orig_recipient
+- subject
+- url.domain
+- url.full
+- url.original
+- url.query
+- user_agent.original
+- network.application
+- http.request.body.content
+- http.request.referrer
+- email.from.address
+- dns.question.name
+- destination.domain
+falsepositives:
+- unknown
+level: medium
